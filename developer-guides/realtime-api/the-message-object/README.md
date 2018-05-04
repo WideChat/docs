@@ -31,11 +31,6 @@ The URL metadata contains several informational fields:
 - `headers`: Some HTTP headers (varies accord to the URL)
 - `parsedUrl`: The parsed URL broken into its parts
 
-The attachment object can contain several fields:
-
-- `image_url`: The image url of the attachment
-- `color`: _(Optional)_ The color of the border which displays on the left side of the attachment.
-
 ```json
 {
     "messages": [
@@ -69,3 +64,12 @@ The attachment object can contain several fields:
     ]
 }
 ```
+
+The attachment object can contain several fields:
+
+- `image_url`: The image url of the attachment
+- `color`: _(Optional)_ The color of the border which displays on the left side of the attachment.
+- `template_type`: _(Optional)_ The template used to specify the type of formatting. Possible values include [generic][1], and more.
+- `payload`: _(Optional)_ If type is specified, the payload dictionary provides the information needed by the special type of formatting.
+
+[1]: the-generic-template/
