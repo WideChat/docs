@@ -7,7 +7,7 @@ The message object contains these fields:
 - `_id`: The message id
 - `rid`: The room id - Identify the room the message belongs
 - `msg`: The textual message
-- `payload`: _(New proposal)_ Object which describes the message content, i.e. text, images, files, [buttons](buttons/), or [templates](templates/) that contain rich message objects including all or some of the above.
+- `payload`: _(New proposal)_ Object which describes the message content, i.e. text, images, [buttons](buttons/), [keyboards](keyboard/), or [complex types](complex-types/) that contain rich message objects including all or some of the above.
 - `ts`: The message time stamp (date of creation on client)
 - `u`: The user that sent the message
 - `_updatedAt`: The time stamp when the message got saved on the server
@@ -34,7 +34,7 @@ The URL metadata contains several informational fields:
 
 The attachment object inside the attachments array can contain several fields:
 
-- `image_url`: The image url of the attachment
+- `imageUrl`: The image url of the attachment
 - `color`: _(Optional)_ The color of the border which displays on the left side of the attachment.
 
 ```json
@@ -75,13 +75,13 @@ The attachment object inside the attachments array can contain several fields:
 
 The payload includes a `type` field:
 - `type`: _(Required)_ The type of content encapsulated in the payload. It is used to describe the content and indicate to the client how to layout and display the rich message.
-- `template_type`: _(Required when `type = template`)_ Indicates which known template to use when constructing the layout. Currently only supports `generic`.
 
 The `type` field options include:
 - `image`: An image only.
-- `horizontal_buttons`: An array of button objects to be displayed horizontally on the screen.
-- `vertical_buttons`: An array of button objects to be displayed vertically on the screen.
-- `template`: _(Requires the use of a `template_type` field)_ Indicates that the layout and contents will be described in the context of a known template.
+- `horizontalButtons`: An array of button objects to be displayed horizontally on the screen.
+- `verticalButtons`: An array of button objects to be displayed vertically on the screen.
+- `generic`: The generic type combines various message components like title, text body, image, link, or buttons into an "element". Multiple elements can be described and displayed vertically.
+- `carousel`: A list of generic type elements that is displayed horizontally from left to right with a slider.
 
 
 ### Image message
@@ -95,8 +95,8 @@ The `type` field options include:
             "msg": "Hello World",
             "payload": {
                     "type": "image",
-                    "image_url": "<imgage-url>",
-                    "image_description": "This is my image!"
+                    "imageUrl": "<imgage-url>",
+                    "imageDescription": "This is my image!"
             },
             "ts": { "$date": 1480377601 },
             "u": {
@@ -126,11 +126,11 @@ The `type` field options include:
             "msg": "Hello World.",
             "payload": { 
                 "type": "image",
-                "image_url": "<imgage-url>",
-                "image_description": "This is my image!",
+                "imageUrl": "<imgage-url>",
+                "imageDescription": "This is my image!",
 
                 "keyboard": {
-                    "default_height": true,
+                    "defaultHeight": true,
                     "buttons": [
                          "<button-object>"
                          "<button-object>"
@@ -152,7 +152,7 @@ The `type` field options include:
 ```
 
 
-### Generic Template message
+### Generic type message
 
 ```json
 {
@@ -161,17 +161,16 @@ The `type` field options include:
             "_id": "<message-id>",
             "rid": "<room-id>",
             "payload": {
-                "type": "template",
-                "template_type": "generic",
+                "type": "generic",
                 "elements":[
                     {
                       "title":"<title-text>",
-                      "image_url":"<image-url-to-display>",
+                      "imageUrl":"<image-url-to-display>",
                       "subtitle":"<subtitle-text>",
-                      "default_action": {
-                            "type": "web_url",
+                      "defaultAction": {
+                            "type": "webUrl",
                             "url": "<default-url-to-open>",
-                            "webview_height_ratio": "<compact | tall | full>"
+                            "webviewHeightRatio": "<compact | tall | full>"
                       },
                       "buttons":["<button-object>", "<button-object>", "<button-object>" ]      
                     },
@@ -202,14 +201,14 @@ The `type` field options include:
             "_id": "<message-id>",
             "rid": "<room-id>",
             "payload":{
-                "type":"horizontal_buttons",
+                "type":"horizontalButtons",
                 "text":"What do you want to do next?",
                 "buttons":[
                     {
-                        "type":"web_url",
+                        "type":"webUrl",
                         "title":"<button-text>",
-                        "web_url": "<url-to-open-in-integrated-webview>",
-                        "webview_height_ratio": "<compact | tall | full>",
+                        "webUrl": "<url-to-open-in-integrated-webview>",
+                        "webviewHeightRatio": "<compact | tall | full>",
                     },
                     {
                         "type":"postback",

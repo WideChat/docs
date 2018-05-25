@@ -9,15 +9,13 @@ An initial implementation would vertically display an arbitrary set of buttons i
 The keyboard object contains these fields:
 
 - `buttons`: Array containing all keyboard buttons by order. See [buttons](../buttons/) for buttons parameter details.
-- `default_height`: _(Optional)_  When true the keyboard will always be displayed with the same height as the native keyboard.When false short keyboards will be displayed with the minimal possible height. Maximal height will be native keyboard height
-- `bg_color`: _(Optional)_ Background color of the keyboard.
-
+- `defaultHeight`: _(Optional)_  When true the keyboard will always be displayed with the same height as the native keyboard.When false short keyboards will be displayed with the minimal possible height. Maximal height will be native keyboard height
 
 ```json
 {
     "payload": {
         "keyboard": {
-            "default_height": true,
+            "defaultHeight": true,
             "buttons": [
                  "<BUTTON_OBJECT>",
                   "<BUTTON_OBJECT>",

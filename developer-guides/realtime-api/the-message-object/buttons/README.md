@@ -4,11 +4,11 @@ Buttons can invoke different types of actions. These buttons allow you to easily
 
 The button object contains these fields:
 
-- `type`: One of these "url", "web_view", or "postback"
+- `type`: One of these "url", "webview", or "postback"
 - `title`: Button title. (String)
 - `url`: _(Required with url type)_ This URL is opened in a mobile browser when the button is tapped.  (String)
-- `web_url`: _(Required with web_view type)_ This URL is opened in an integrated webview. The page view is in front of the chat window and it can be a configurably sized in conjunction with the `webview_height_ratio` field.  (String)
-- `webview_height_ratio`: _(Optional with web_view type)_ Height of the webview. Valid values: "compact", "tall", "full". Defaults to full.
+- `webUrl`: _(Required with webview type)_ This URL is opened in an integrated webview. The page view is in front of the chat window and it can be a configurably sized in conjunction with the `webviewHeightRatio` field.  (String)
+- `webviewHeightRatio`: _(Optional with webview type)_ Height of the webview. Valid values: "compact", "tall", "full". Defaults to full.
 - `payload`: _(Required with the postback type) This data will be sent back to your webhook. (String)
 - `image`: _(Optional)_ Url to an image to be displayed in a button.
 
@@ -26,16 +26,16 @@ The URL Button opens a web page in a mobile browser. This allows you to enrich t
 ]
 ```
 
-## web_view button type
+## webUrl button type
 
-The web_view button opens an integrated webview where the page in the view is in front of the chat window and it's size can be configured.
+The webview button opens an integrated webview where the page in the view is in front of the chat window and it's size can be configured.
 
 ```json
 "buttons":[
     {
-      "type": "web_url",
-      "web_url": "<URL_TO_OPEN_IN_INTEGRATED_WEBVIEW>",
-      "webview_height_ratio": "<COMPACT | TALL | FULL>",
+      "type": "webUrl",
+      "webUrl": "<URL_TO_OPEN_IN_INTEGRATED_WEBVIEW>",
+      "webviewHeightRatio": "<COMPACT | TALL | FULL>",
       "title": "<BUTTON_TEXT>",
       "image": "<URL_TO_IMAGE_DISPLAYED_IN_BUTTON"
     },
