@@ -57,7 +57,7 @@ The postback button sends a message event to your webhook with the string set in
 ]
 ```
 
-`*` Buttons can be included within a '''buttons''' object inside the generic template or in a '''buttons template''' of it's own. 
+`*` Buttons can be included within a '''buttons''' object inside the generic type or in any of the button types of it's own. 
 
 ## Resources
 
