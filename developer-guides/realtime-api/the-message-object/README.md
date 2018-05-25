@@ -84,7 +84,7 @@ The `type` field options include:
 - `carousel`: A list of generic type elements that is displayed horizontally from left to right with a slider.
 
 
-### Image message
+### Image payload
 
 ```json
 {
@@ -115,7 +115,7 @@ The `type` field options include:
 ```
 
 
-### Image message with [keyboard](keyboard/)
+### Image payload with [keyboard](keyboard/)
 
 ```json
 {
@@ -152,7 +152,7 @@ The `type` field options include:
 ```
 
 
-### Generic type message
+### Generic type payload
 
 ```json
 {
@@ -192,7 +192,7 @@ The `type` field options include:
 }
 ```
 
-##  Button message including three button types
+##  Button payload including three button types
 
 ```json
 {
