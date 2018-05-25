@@ -44,4 +44,16 @@ The Elements array contains these fields:
 
 Like the generic type, the carousel type combines various message components like title, text body, image, link, or buttons into an element in an elements array. **When there are multiple elements, the carousel displays them left to right with a slider.**
 
+## The Horizontal Button Type
+
+The horizontal button type is an array of buttons displayed horizontally.
+
+- `type`: Must be `horizontalButtons`
+
+## The Vertical Button Type
+
+The verical button type is an array of buttons displayed vertically.
+
+- `type`: Must be `verticalButtons`
+
 
