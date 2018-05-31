@@ -2,6 +2,10 @@
 
 Buttons can invoke different types of actions. These buttons allow you to easily offer the message recipient actions they can take in response to the template, such as opening a webview, starting a payment flow, sending a postback message to your webhook, and more. *
 
+Buttons can be rendered either horizontally or vertically using the `button_layout` field at any level in the payload outside of the buttons array itself.
+- `button_layout`: _(Depends on the inclusion of a buttons arrary)_ Describes how the buttons are to be laid out in the chat window or keyboard. Possible values: `vertical` or `horizontal`.
+
+
 The button object contains these fields:
 
 - `type`: One of these "url", "webview", or "postback"
@@ -57,7 +61,7 @@ The postback button sends a message event to your webhook with the string set in
 ]
 ```
 
-`*` Buttons can be included within a '''buttons''' object inside the generic type or in any of the button types of it's own. 
+`*` Buttons can be included within a '''buttons''' object inside almost any type.
 
 ## Resources
 

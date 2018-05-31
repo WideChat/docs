@@ -17,7 +17,7 @@ The Elements array contains these fields:
 - `subtitle`: _(Optional)_  The subtitle to display in the template. (String)
 - `imageUrl`: _(Optional)_ The URL of the image to display in the template. (String)
 - `defaultAction`: _(Optional)_ The default action executed when the template is tapped. accepts the same properties as URL button, except title. (Object)
-- `buttons`: _(Optional)_ An array of buttons to append to the template. A maximum of 3 buttons per element is supported.
+- `buttons`: _(Optional)_ An array of buttons to append to the template, rendered either vertical or horizontal using the [previously described](../buttons) `button_layout` field.
 
 ```json
 "payload": {
@@ -32,6 +32,7 @@ The Elements array contains these fields:
             "url": "<DEFAULT_URL_TO_OPEN>",
             "webviewHeightRatio": "<COMPACT | TALL | FULL>"
         },
+      "button_layout":"horizontal",
       "buttons":["<BUTTON_OBJECT>", 
                  "<BUTTON_OBJECT>", 
                  "<BUTTON_OBJECT>" ]      

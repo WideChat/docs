@@ -16,6 +16,7 @@ The keyboard object contains these fields:
     "payload": {
         "keyboard": {
             "defaultHeight": true,
+            "button_layout":"horizontal",
             "buttons": [
                  "<BUTTON_OBJECT>",
                   "<BUTTON_OBJECT>",
